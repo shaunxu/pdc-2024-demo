@@ -1,21 +1,8 @@
-# from sklearn.decomposition import PCA
-import numpy as np
 import matplotlib.pyplot as plt
-import umap
-import pandas as pd
+from _pc_manual import get_umap
 
-df = pd.read_csv("data/pc-manual.csv", skipinitialspace=True, usecols=["chunk_vector", "chunk_content"])
-vectors = []
-for s in df["chunk_vector"]:
-    vector = []
-    for e in s.split(","):
-        vector.append(float(e))
-    vectors.append(vector)
-
-reducer = umap.UMAP(random_state=0, transform_seed=0)
-umap_vectors = reducer.fit_transform(vectors)
-print(umap_vectors)
+[umap_passage_vectors, umap_transform] = get_umap()
 
 plt.figure()
-plt.scatter(umap_vectors[:, 0], umap_vectors[:, 1], marker=".")
+plt.scatter(umap_passage_vectors[:, 0], umap_passage_vectors[:, 1], marker=".", c="gray", s=10)
 plt.show()

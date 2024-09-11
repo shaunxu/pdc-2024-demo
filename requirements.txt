@@ -3,3 +3,5 @@ numpy
 matplotlib
 umap-learn
 pandas
+transformers
+torch
