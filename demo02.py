@@ -20,5 +20,4 @@ scatter_query_vector("知识管理中能否创建思维导图", color="green")
 scatter_query_vector("May I create a mindmap in a page", color="green")
 
 scatter_query_vector("页面里面能否引用工作项", color="blue")
-
 plt.show()
